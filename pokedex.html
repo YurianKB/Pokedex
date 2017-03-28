@@ -10,16 +10,14 @@
     <input type="text" id="nombrePokemon" placeholder="Nombre de tu Pokemón">
     <input type="text" id="colorPokemon" placeholder="Color de tu Pokemón">
     <input type="text" id="puntosAtaque" placeholder="Puntos de Ataque"><br>
-    <button type="button" name="button" onclick="obtenerPokemon">Crear Pokemón</button><br><br>
+    <button type="button" id="crearPokemon" onclick="crearPokemon();">Crear Pokemón</button><br><br>
 
-    <select name="select">
-      <option value="Pikachu" onclick=""></option>
-      <option value="Charmander"></option>
+    <select id="listaPokemon">
+      <option id="elemento"></option>
     </select>
 
-    <select name="select">
-      <option value="Pikachu"></option>
-      <option value="Charmander"></option>
+    <select id="listaPokemon">
+      <option id="elemento"></option>
     </select><br>
 
     <button type="button" name="button" onclick="this.pelear;">P E L E A R !</button>

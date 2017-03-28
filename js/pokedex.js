@@ -1,14 +1,3 @@
-function obtenerPokemon(){
-  var pokemonAgregado = document.getElementById("nombrePokemon").value
-  var guardarPokemon = createElement("select")
-
-  var mostrarTexto = document.getElementById("text");
-  mostrarTexto.innerHTML = area;
-  var textoPreview = mostrarTexto.innerHTML;
-  return textoPreview;
-}
-
-
 function Pokemon(nombre,color,puntosAtaque){
   this.nombre = nombre;
   this.color = color;
@@ -34,13 +23,80 @@ function Pokemon(nombre,color,puntosAtaque){
   };
 }
 
+var nuevoPokemon = [];
 
-var pikachu = new Pokemon("Pikachu","amarillo", 80);
-var charmander  = new Pokemon("Charmander","rojo", 30);
+function crearPokemon(){
+ var nombrePokemon = document.getElementById("nombrePokemon");
+ var colorPokemon = document.getElementById("colorPokemon");
+ var puntosPokemon = document.getElementById("puntosAtaque");
 
-console.log(pikachu)
-console.log(charmander)
+ var pokemonCreado = new Pokemon(nombrePokemon.value,
+                                colorPokemon.value,
+                                parseInt(puntosAtaque.value)
+                                );
+ nuevoPokemon.push(pokemonCreado);
+ mostrarPokemons();
+ nombrePokemon.value=" ";
+ colorPokemon.value=" ";
+ puntosAtaque.value =" ";
+}
 
-pikachu.pelear(charmander)
+function mostrarPokemons(){
+var listaPokemon = document.getElementById("listaPokemon");
+var lista = document.createElement("select");
+nuevoPokemon.forEach(function(pokemonCreado){
+  var elemento = document.createElement("option");
+  elemento.innerText = nuevoPokemon.nombre + " " + nuevoPokemon.color + " " + nuevoPokemon.puntosAtaque;
+  listaPokemon.appendChild(elemento);
+})
+}
 
-console.log(charmander.vida)
+//var pikachu = new Pokemon("Pikachu","amarillo", 80);
+//var charmander  = new Pokemon("Charmander","rojo", 30);
+
+//console.log(pikachu)
+//console.log(charmander)
+
+//pikachu.pelear(charmander)
+
+//console.log(charmander.vida)
+
+
+/*function obtenerPokemon(){
+  var pokemonAgregado = document.getElementById("nombrePokemon").value
+  var guardarPokemon = createElement("select")
+
+  var mostrarTexto = document.getElementById("text");
+  mostrarTexto.innerHTML = area;
+  var textoPreview = mostrarTexto.innerHTML;
+  return textoPreview;
+}*/
+
+
+var nuevoPokemon = [];
+
+function crearPokemon(){
+ var nombrePokemon = document.getElementById("nombrePokemon");
+ var colorPokemon = document.getElementById("colorPokemon");
+ var puntosPokemon = document.getElementById("puntosAtaque");
+
+ var pokemonCreado = new Pokemon(nombrePokemon.value,
+                                colorPokemon.value,
+                                parseInt(puntosAtaque.value)
+                                );
+ nuevoPokemon.push(pokemonCreado);
+ mostrarPokemons();
+ nombrePokemon.value=" ";
+ colorPokemon.value=" ";
+ puntosAtaque.value =" ";
+}
+
+function mostrarPokemons(){
+var listaPokemon = document.getElementById("listaPokemon");
+var lista = document.createElement("select");
+nuevoPokemon.forEach(function(pokemonCreado){
+  var elemento = document.createElement("option");
+  elemento.innerText = nuevoPokemon.nombre + " " + nuevoPokemon.color + " " + nuevoPokemon.puntosAtaque;
+  listaPokemon.appendChild(elemento);
+})
+}
