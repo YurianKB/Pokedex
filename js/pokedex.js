@@ -41,15 +41,15 @@ function crearPokemon(){
  puntosAtaque.value =" ";
 }
 
-function mostrarPokemons(){
+/*function mostrarPokemons(){
 var listaPokemon = document.getElementById("listaPokemon");
 var lista = document.createElement("select");
 nuevoPokemon.forEach(function(pokemonCreado){
   var elemento = document.createElement("option");
   elemento.innerText = nuevoPokemon.nombre + " " + nuevoPokemon.color + " " + nuevoPokemon.puntosAtaque;
-  listaPokemon.appendChild(elemento);
+  pokeLista.appendChild(elemento);
 })
-}
+}*/
 
 //var pikachu = new Pokemon("Pikachu","amarillo", 80);
 //var charmander  = new Pokemon("Charmander","rojo", 30);
@@ -62,7 +62,7 @@ nuevoPokemon.forEach(function(pokemonCreado){
 //console.log(charmander.vida)
 
 
-/*function obtenerPokemon(){
+function obtenerPokemon(){
   var pokemonAgregado = document.getElementById("nombrePokemon").value
   var guardarPokemon = createElement("select")
 
@@ -70,7 +70,7 @@ nuevoPokemon.forEach(function(pokemonCreado){
   mostrarTexto.innerHTML = area;
   var textoPreview = mostrarTexto.innerHTML;
   return textoPreview;
-}*/
+}
 
 
 var nuevoPokemon = [];
@@ -85,13 +85,28 @@ function crearPokemon(){
                                 parseInt(puntosAtaque.value)
                                 );
  nuevoPokemon.push(pokemonCreado);
- mostrarPokemons();
+ mostrarPokemon();
  nombrePokemon.value=" ";
  colorPokemon.value=" ";
  puntosAtaque.value =" ";
 }
+function mostrarPokemon() {
+    var listaPokemon = document.getElementById("pokeLista");
+    var listaPokemon2 = document.getElementById("pokeLista2");
+    var opciones = document.createElement("select");
+    var opcionesEnemigos = document.createElement("select");
+    var elemento = document.createElement("option");
+    var elementoEnemigo = document.createElement("option");
 
-function mostrarPokemons(){
+nuevoPokemon.forEach(function(pokemon){
+    elemento.innerText = nuevoPokemon.nombre + " " + nuevoPokemon.color + " " + nuevoPokemon.puntosAtaque;
+    elementoEnemigo.innerHTML = nuevoPokemon.nombre + " " + nuevoPokemon.color + " " + nuevoPokemon.puntosAtaque;
+    pokeLista.appendChild(elemento);
+    pokeLista2.appendChild(elementoEnemigo);
+  })
+}
+
+/*function mostrarPokemons(){
 var listaPokemon = document.getElementById("listaPokemon");
 var lista = document.createElement("select");
 nuevoPokemon.forEach(function(pokemonCreado){
@@ -100,3 +115,4 @@ nuevoPokemon.forEach(function(pokemonCreado){
   listaPokemon.appendChild(elemento);
 })
 }
+*/
